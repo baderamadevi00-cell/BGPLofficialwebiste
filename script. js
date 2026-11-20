@@ -1,0 +1,70 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // MOBILE NAVIGATION
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+
+    if (toggle && nav) {
+
+        toggle.addEventListener("click", function () {
+
+            const isOpen = nav.classList.toggle("open");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+        });
+
+        // CLOSE MENU AFTER CLICKING A LINK
+        nav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                nav.classList.remove("open");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+    }
+
+    // AUTOMATIC COPYRIGHT YEAR
+    document.querySelectorAll("[data-year]").forEach(function (element) {
+
+        element.textContent = new Date().getFullYear();
+
+    });
+
+    // CONTACT FORM DEMO
+    const form = document.querySelector(".contact-form");
+
+    if (form) {
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const note = form.querySelector(".form-note");
+
+            if (note) {
+
+                note.textContent =
+                    "Thank you for contacting BGPL! Please connect a form service to receive enquiries.";
+
+            }
+
+            form.reset();
+
+        });
+
+    }
+
+});
