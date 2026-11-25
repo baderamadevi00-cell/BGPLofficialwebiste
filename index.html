@@ -1,255 +1,1178 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BGPL | Badireddy Group Pvt. Ltd.</title>
+
+<meta name="description" content="Badireddy Group Pvt. Ltd. - Interiors, Real Estate, Financial Services and Organic Farming.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #25251f;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: 65px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #ad8952;
+}
+
+.menu {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* PAGE NAVIGATION */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.40)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 750px;
+    padding: 100px 0;
+}
+
+.tag {
+    color: #d8bd8e;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px,7vw,78px);
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.hero p {
+    font-size: 17px;
+    max-width: 650px;
+}
+
+.btn {
+    display: inline-block;
+    background: #a7834d;
+    color: white;
+    padding: 14px 25px;
+    margin-top: 25px;
+    text-decoration: none;
+    border: 1px solid #a7834d;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #a7834d;
+}
+
+/* SECTIONS */
+
+section.content {
+    padding: 90px 0;
+}
+
+.light {
+    background: #f5f3ef;
+}
+
+.dark {
+    background: #191a17;
+    color: white;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.heading {
+    font-family: Georgia, serif;
+    font-size: clamp(32px,4vw,50px);
+    margin: 15px 0 20px;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: #a7834d;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.description {
+    color: #777;
+    max-width: 750px;
+    font-size: 15px;
+}
+
+.center .description {
+    margin: auto;
+}
+
+/* TWO COLUMN */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.split img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+/* BUSINESS CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    color: white;
+    background: #333;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    background: linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.card-info h3 {
+    font-family: Georgia,serif;
+    font-size: 35px;
+}
+
+.card-info p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* SERVICE BOXES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.service-box {
+    background: white;
+    padding: 30px;
+    border: 1px solid #eee;
+}
+
+.service-box h3 {
+    font-family: Georgia,serif;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* PAGE BANNERS */
+
+.page-banner {
+    height: 430px;
+    display: flex;
+    align-items: end;
+    color: white;
+    background:
+    linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,.15)),
+    var(--banner) center/cover;
+}
+
+.page-banner .container {
+    padding-bottom: 75px;
+}
+
+.page-banner h1 {
+    font-family: Georgia,serif;
+    font-size: clamp(40px,6vw,65px);
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.contact-box {
+    padding: 25px;
+    background: #f5f3ef;
+}
+
+form {
+    max-width: 700px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-family: Arial,sans-serif;
+}
+
+textarea {
+    grid-column: 1/-1;
+    height: 140px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #171815;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    width: 145px;
+    background: white;
+    padding: 5px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* BGPL REAL ESTATE FOUR-COLUMN SECTION */
+
+.realestate-heading {
+    max-width: 850px;
+    margin: 0 auto 45px;
+}
+
+.realestate-four-columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    padding: 10px 0 45px;
+}
+
+.realestate-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 18px;
+}
+
+.realestate-column h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 14px;
+    border-left: 3px solid;
+    margin: 0 0 8px;
+}
+
+.realestate-column a {
+    color: #454545;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.realestate-column a:hover {
+    color: #a7834d;
+    transform: translateX(5px);
+}
+
+.residential-heading {
+    color: #00a5ad;
+    border-color: #00a5ad !important;
+}
+
+.commercial-heading {
+    color: #d58a68;
+    border-color: #d58a68 !important;
+}
+
+.plots-heading {
+    color: #667585;
+    border-color: #667585 !important;
+}
+
+.lands-heading {
+    color: #a7834d;
+    border-color: #a7834d !important;
+}
+
+.realestate-bottom {
+    border-top: 1px solid #dedede;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: #73746f;
+    font-size: 15px;
+}
+
+.realestate-bottom a {
+    color: #a7834d;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.realestate-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:800px) {
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .realestate-four-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 40px;
+    }
+}
+
+@media(max-width:520px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    textarea {
+        grid-column: auto;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .card {
+        height: 350px;
+    }
+
+    .realestate-four-columns {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .realestate-column {
+        padding: 0 5px;
+    }
+
+    .realestate-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<img src="assets/images/bgpl-logo.png" alt="BGPL Logo">
+</div>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+<nav id="navigation">
+<a onclick="showPage('home')">HOME</a>
+<a onclick="showPage('about')">ABOUT</a>
+<a onclick="showPage('interiors')">INTERIORS</a>
+<a onclick="showPage('realestate')">REAL ESTATE</a>
+<a onclick="showPage('finance')">FINANCIAL SERVICES</a>
+<a onclick="showPage('farming')">ORGANIC FARMING</a>
+<a onclick="showPage('gallery')">GALLERY</a>
+<a onclick="showPage('contact')">CONTACT</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HOME PAGE -->
+
+<div class="page active" id="home">
+
+<section class="hero">
+<div class="container hero-content">
+<div class="tag">BADIREDDY GROUP PRIVATE LIMITED</div>
+<h1>Building Possibilities. Creating a Better Tomorrow.</h1>
+<p>Bringing diverse industries together through thoughtful design, property development, financial services and sustainable agriculture.</p>
+<a class="btn" onclick="showPage('about')">DISCOVER BGPL ↗</a>
+</div>
+</section>
+
+<section class="content">
+<div class="container split">
+<div>
+<div class="subtitle">WHO WE ARE</div>
+<h2 class="heading">A Group Built on Vision and Possibilities</h2>
+<p class="description">Badireddy Group Pvt. Ltd. brings together multiple business sectors with a focus on quality, innovation and responsible growth.</p>
+<a class="btn" onclick="showPage('about')">ABOUT US ↗</a>
+</div>
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Corporate workspace">
+</div>
+</section>
+
+<section class="content light">
+<div class="container">
+<div class="center">
+<div class="subtitle">OUR BUSINESS VERTICALS</div>
+<h2 class="heading">Explore Our Businesses</h2>
+<p class="description">Four business divisions. One shared vision for growth and excellence.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Interiors">
+<div class="card-info">
+<h3>Interiors</h3>
+<p>Beautiful spaces with thoughtful design and functionality.</p>
+<a class="btn" onclick="showPage('interiors')">EXPLORE ↗</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85" alt="Real Estate">
+<div class="card-info">
+<h3>Real Estate</h3>
+<p>Property opportunities and development.</p>
+<a class="btn" onclick="showPage('realestate')">EXPLORE ↗</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="Financial Services">
+<div class="card-info">
+<h3>Financial Services</h3>
+<p>Professional financial services and solutions.</p>
+<a class="btn" onclick="showPage('finance')">EXPLORE ↗</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85" alt="Organic Farming">
+<div class="card-info">
+<h3>Organic Farming</h3>
+<p>Supporting sustainable agriculture and nature.</p>
+<a class="btn" onclick="showPage('farming')">EXPLORE ↗</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="content dark">
+<div class="container">
+<div class="subtitle">OUR PHILOSOPHY</div>
+<h2 class="heading">Growing Across Industries.<br>Moving Forward Together.</h2>
+<p class="description">Creating meaningful opportunities through innovation, responsibility and a long-term vision.</p>
+<a class="btn" onclick="showPage('contact')">CONNECT WITH US ↗</a>
+</div>
+</section>
+
+</div>
+
+
+<!-- ABOUT PAGE -->
+
+<div class="page" id="about">
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">ABOUT BGPL</div>
+<h1>One Group. A Shared Vision.</h1>
+</div>
+</section>
+
+<section class="content">
+<div class="container split">
+<div>
+<div class="subtitle">WHO WE ARE</div>
+<h2 class="heading">Badireddy Group Pvt. Ltd.</h2>
+<p class="description">A multi-business group bringing together Interiors, Real Estate, Financial Services and Organic Farming. Our focus is on quality, professionalism, innovation and responsible growth.</p>
+</div>
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="BGPL business">
+</div>
+</section>
+
+<section class="content light">
+<div class="container">
+<div class="center">
+<div class="subtitle">OUR DIRECTION</div>
+<h2 class="heading">Vision, Mission & Values</h2>
+</div>
+<div class="services">
+<div class="service-box">
+<h3>Our Vision</h3>
+<p>To build meaningful businesses that create lasting value.</p>
+</div>
+<div class="service-box">
+<h3>Our Mission</h3>
+<p>To deliver quality and professional services across our industries.</p>
+</div>
+<div class="service-box">
+<h3>Our Values</h3>
+<p>Integrity, innovation, responsibility and customer focus.</p>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+
+<!-- INTERIORS PAGE -->
+
+<div class="page" id="interiors">
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">BGPL BUSINESS DIVISION</div>
+<h1>Interiors</h1>
+<p>Designing Spaces. Enhancing Everyday Living.</p>
+</div>
+</section>
+
+<section class="content">
+<div class="container split">
+<div>
+<div class="subtitle">INTERIOR DESIGN</div>
+<h2 class="heading">Beautiful Spaces. Thoughtful Design.</h2>
+<p class="description">Creating comfortable, elegant and functional residential and commercial environments with thoughtful interior solutions.</p>
+<a class="btn" onclick="showPage('contact')">MAKE AN ENQUIRY</a>
+</div>
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Luxury interior">
+</div>
+</section>
+
+<section class="content light">
+<div class="container">
+<div class="center">
+<div class="subtitle">OUR SERVICES</div>
+<h2 class="heading">Interior Design Solutions</h2>
+</div>
+<div class="services">
+<div class="service-box">
+<h3>Residential Interiors</h3>
+<p>Elegant and comfortable spaces for modern homes.</p>
+</div>
+<div class="service-box">
+<h3>Commercial Interiors</h3>
+<p>Professional and functional commercial spaces.</p>
+</div>
+<div class="service-box">
+<h3>Space Planning</h3>
+<p>Smart planning to make the best use of available space.</p>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+
 <!-- REAL ESTATE PAGE -->
 
 <div class="page" id="realestate">
 
-    <!-- REAL ESTATE HERO BANNER -->
-
-    <section class="page-banner"
-    style="--banner:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=85')">
-
-        <div class="container">
-            <div class="subtitle">BGPL BUSINESS DIVISION</div>
-            <h1>Real Estate</h1>
-            <p>Spaces for Living. Opportunities for Tomorrow.</p>
-        </div>
-
-    </section>
-
-    <!-- INTRODUCTION -->
-
-    <section class="content">
-
-        <div class="container split">
-
-            <div>
-                <div class="subtitle">PROPERTY & DEVELOPMENT</div>
-
-                <h2 class="heading">
-                    Building Opportunities Through Property
-                </h2>
-
-                <p class="description">
-                    Exploring residential and commercial property
-                    opportunities with a focus on thoughtful development
-                    and long-term value.
-                </p>
-
-                <a class="btn" onclick="showPage('contact')">
-                    MAKE AN ENQUIRY
-                </a>
-            </div>
-
-            <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-            alt="Real Estate Property">
-
-        </div>
-
-    </section>
-
-    <!-- FOUR REAL ESTATE CATEGORIES -->
-
-    <section class="content light">
-
-        <div class="container">
-
-            <div class="center realestate-intro">
-
-                <div class="subtitle">OUR REAL ESTATE DIVISION</div>
-
-                <h2 class="heading">
-                    Explore Our Property Categories
-                </h2>
-
-                <p class="description">
-                    Discover a range of property opportunities
-                    designed for different needs and aspirations.
-                    Explore our residential, commercial, open plots
-                    and land categories.
-                </p>
-
-            </div>
-
-            <div class="realestate-grid">
-
-                <!-- RESIDENTIAL -->
-
-                <div class="realestate-card">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
-                    alt="Residential Properties">
-
-                    <div class="realestate-card-info">
-
-                        <h3>Residential</h3>
-
-                        <p>
-                            Explore apartments, luxury villas,
-                            independent houses and residential projects.
-                        </p>
-
-                        <a class="btn" onclick="showPage('contact')">
-                            EXPLORE MORE ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- COMMERCIAL -->
-
-                <div class="realestate-card">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-                    alt="Commercial Properties">
-
-                    <div class="realestate-card-info">
-
-                        <h3>Commercial</h3>
-
-                        <p>
-                            Explore office spaces, shops,
-                            showrooms and commercial buildings.
-                        </p>
-
-                        <a class="btn" onclick="showPage('contact')">
-                            EXPLORE MORE ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- OPEN PLOTS -->
-
-                <div class="realestate-card">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85"
-                    alt="Open Plots">
-
-                    <div class="realestate-card-info">
-
-                        <h3>Open Plots</h3>
-
-                        <p>
-                            Discover residential open plots,
-                            approved plots and investment opportunities.
-                        </p>
-
-                        <a class="btn" onclick="showPage('contact')">
-                            EXPLORE MORE ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <!-- LANDS -->
-
-                <div class="realestate-card">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=85"
-                    alt="Land Properties">
-
-                    <div class="realestate-card-info">
-
-                        <h3>Lands</h3>
-
-                        <p>
-                            Explore agricultural lands,
-                            development lands and land opportunities.
-                        </p>
-
-                        <a class="btn" onclick="showPage('contact')">
-                            EXPLORE MORE ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- WHY CHOOSE BGPL -->
-
-    <section class="content">
-
-        <div class="container">
-
-            <div class="center">
-
-                <div class="subtitle">OUR APPROACH</div>
-
-                <h2 class="heading">
-                    Property Opportunities With a Vision
-                </h2>
-
-                <p class="description">
-                    We aim to provide property information and
-                    opportunities across different real estate
-                    categories based on customer requirements.
-                </p>
-
-            </div>
-
-            <div class="services">
-
-                <div class="service-box">
-
-                    <h3>Residential Properties</h3>
-
-                    <p>
-                        Property options for comfortable
-                        and modern living.
-                    </p>
-
-                </div>
-
-                <div class="service-box">
-
-                    <h3>Commercial Properties</h3>
-
-                    <p>
-                        Spaces for business activities
-                        and commercial requirements.
-                    </p>
-
-                </div>
-
-                <div class="service-box">
-
-                    <h3>Plots & Lands</h3>
-
-                    <p>
-                        Opportunities to explore different
-                        types of plots and land properties.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="center">
-
-                <a class="btn" onclick="showPage('contact')">
-                    CONTACT US FOR ENQUIRIES ↗
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+<!-- REAL ESTATE HERO BANNER -->
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">BGPL BUSINESS DIVISION</div>
+<h1>Real Estate</h1>
+<p>Spaces for Living. Opportunities for Tomorrow.</p>
+</div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="content">
+<div class="container split">
+<div>
+<div class="subtitle">PROPERTY & DEVELOPMENT</div>
+<h2 class="heading">Building Opportunities Through Property</h2>
+<p class="description">
+Exploring residential and commercial property
+opportunities with a focus on thoughtful development
+and long-term value.
+</p>
+<a class="btn" onclick="showPage('contact')">MAKE AN ENQUIRY</a>
+</div>
+
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Real estate">
+</div>
+</section>
+
+<!-- FOUR REAL ESTATE SUB-CATEGORIES -->
+
+<section class="content light">
+<div class="container">
+
+<div class="center realestate-heading">
+<div class="subtitle">OUR REAL ESTATE DIVISION</div>
+<h2 class="heading">Explore Our Real Estate Services</h2>
+<p class="description">
+Explore our comprehensive range of property categories
+and opportunities designed to meet different customer requirements.
+</p>
+</div>
+
+<div class="realestate-four-columns">
+
+<!-- 1. RESIDENTIAL -->
+
+<div class="realestate-column">
+<h3 class="residential-heading">Residential</h3>
+<a onclick="showPage('contact')">Apartments</a>
+<a onclick="showPage('contact')">Luxury Villas</a>
+<a onclick="showPage('contact')">Independent Houses</a>
+<a onclick="showPage('contact')">Residential Projects</a>
+</div>
+
+<!-- 2. COMMERCIAL -->
+
+<div class="realestate-column">
+<h3 class="commercial-heading">Commercial</h3>
+<a onclick="showPage('contact')">Office Spaces</a>
+<a onclick="showPage('contact')">Retail Shops</a>
+<a onclick="showPage('contact')">Showrooms</a>
+<a onclick="showPage('contact')">Commercial Buildings</a>
+</div>
+
+<!-- 3. OPEN PLOTS -->
+
+<div class="realestate-column">
+<h3 class="plots-heading">Open Plots</h3>
+<a onclick="showPage('contact')">Residential Plots</a>
+<a onclick="showPage('contact')">Approved Layouts</a>
+<a onclick="showPage('contact')">Investment Plots</a>
+<a onclick="showPage('contact')">Plot Opportunities</a>
+</div>
+
+<!-- 4. LANDS -->
+
+<div class="realestate-column">
+<h3 class="lands-heading">Lands</h3>
+<a onclick="showPage('contact')">Agricultural Lands</a>
+<a onclick="showPage('contact')">Development Lands</a>
+<a onclick="showPage('contact')">Investment Lands</a>
+<a onclick="showPage('contact')">Land Opportunities</a>
+</div>
+
+</div>
+
+<!-- BOTTOM ENQUIRY STRIP -->
+
+<div class="realestate-bottom">
+<span>Explore our comprehensive range of real estate opportunities</span>
+<a onclick="showPage('contact')">Contact Us ↗</a>
+</div>
+
+</div>
+</section>
+
+<!-- FINAL ENQUIRY SECTION -->
+
+<section class="content">
+<div class="container center">
+<div class="subtitle">GET IN TOUCH</div>
+<h2 class="heading">Find the Right Property With BGPL</h2>
+<p class="description">
+Contact our team to know more about our residential,
+commercial, open plots and land opportunities.
+</p>
+<a class="btn" onclick="showPage('contact')">CONTACT US FOR ENQUIRIES ↗</a>
+</div>
+</section>
 
 </div>
 
 <!-- END OF REAL ESTATE PAGE -->
+
+
+<!-- FINANCIAL SERVICES PAGE -->
+
+<div class="page" id="finance">
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">BGPL BUSINESS DIVISION</div>
+<h1>Financial Services</h1>
+<p>Supporting Informed Financial Decisions.</p>
+</div>
+</section>
+
+<section class="content">
+<div class="container split">
+<div>
+<div class="subtitle">FINANCIAL SOLUTIONS</div>
+<h2 class="heading">Professional Financial Services</h2>
+<p class="description">Providing a platform to explore professional financial services and responsible financial solutions.</p>
+<a class="btn" onclick="showPage('contact')">MAKE AN ENQUIRY</a>
+</div>
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Financial services">
+</div>
+</section>
+
+<section class="content light">
+<div class="container">
+<div class="center">
+<div class="subtitle">OUR SERVICE AREAS</div>
+<h2 class="heading">Financial Services Overview</h2>
+</div>
+<div class="services">
+<div class="service-box">
+<h3>Financial Solutions</h3>
+<p>Information about available financial products and services.</p>
+</div>
+<div class="service-box">
+<h3>Customer Guidance</h3>
+<p>Clear information to help customers understand their options.</p>
+</div>
+<div class="service-box">
+<h3>Service Information</h3>
+<p>Learn about service details and requirements.</p>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+
+<!-- ORGANIC FARMING PAGE -->
+
+<div class="page" id="farming">
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">BGPL BUSINESS DIVISION</div>
+<h1>Organic Farming</h1>
+<p>Growing Responsibly. Thinking Sustainably.</p>
+</div>
+</section>
+
+<section class="content">
+<div class="container split">
+<div>
+<div class="subtitle">SUSTAINABLE AGRICULTURE</div>
+<h2 class="heading">Growing With Nature</h2>
+<p class="description">Promoting sustainable agricultural practices, responsible cultivation and a greener future.</p>
+<a class="btn" onclick="showPage('contact')">MAKE AN ENQUIRY</a>
+</div>
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85" alt="Organic farming">
+</div>
+</section>
+
+<section class="content light">
+<div class="container">
+<div class="center">
+<div class="subtitle">OUR FOCUS</div>
+<h2 class="heading">Sustainable Agriculture</h2>
+</div>
+<div class="services">
+<div class="service-box">
+<h3>Organic Cultivation</h3>
+<p>Responsible agricultural cultivation practices.</p>
+</div>
+<div class="service-box">
+<h3>Sustainable Practices</h3>
+<p>Encouraging responsible use of natural resources.</p>
+</div>
+<div class="service-box">
+<h3>Green Future</h3>
+<p>Building awareness of sustainable agriculture.</p>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+
+<!-- GALLERY PAGE -->
+
+<div class="page" id="gallery">
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">VISUAL STORIES</div>
+<h1>Our Gallery</h1>
+<p>A glimpse into the BGPL business divisions.</p>
+</div>
+</section>
+
+<section class="content">
+<div class="container">
+<div class="center">
+<div class="subtitle">OUR COLLECTION</div>
+<h2 class="heading">Explore Our World</h2>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Interior">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Home">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Building">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85" alt="Farm">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85" alt="Office">
+<img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=85" alt="Property">
+</div>
+
+</div>
+</section>
+
+</div>
+
+
+<!-- CONTACT PAGE -->
+
+<div class="page" id="contact">
+
+<section class="page-banner" style="--banner:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85')">
+<div class="container">
+<div class="subtitle">GET IN TOUCH</div>
+<h1>Contact Us</h1>
+<p>Let's build something meaningful together.</p>
+</div>
+</section>
+
+<section class="content">
+<div class="container center">
+<div class="subtitle">CONTACT BGPL</div>
+<h2 class="heading">We Would Love to Hear From You</h2>
+<p class="description">Connect with Badireddy Group Pvt. Ltd. for business enquiries and further information.</p>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<h3>Company</h3>
+<p>Badireddy Group Pvt. Ltd.</p>
+</div>
+
+<div class="contact-box">
+<h3>Email</h3>
+<p>Add official company email</p>
+</div>
+
+<div class="contact-box">
+<h3>Phone</h3>
+<p>Add official phone number</p>
+</div>
+
+</div>
+
+<form onsubmit="sendMessage(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="tel" placeholder="Phone Number">
+<input type="text" placeholder="Subject">
+<textarea placeholder="Your Message" required></textarea>
+<button class="btn" type="submit">SEND ENQUIRY</button>
+</form>
+
+<p id="formMessage"></p>
+
+</div>
+</section>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+<div class="footer-content">
+
+<div>
+<img class="footer-logo" src="assets/images/bgpl-logo.png" alt="BGPL Logo">
+<p>Badireddy Group Pvt. Ltd.</p>
+<p>Building Possibilities Across Industries.</p>
+</div>
+
+<div class="footer-links">
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('interiors')">Interiors</a>
+<a onclick="showPage('realestate')">Real Estate</a>
+<a onclick="showPage('finance')">Financial Services</a>
+<a onclick="showPage('farming')">Organic Farming</a>
+<a onclick="showPage('gallery')">Gallery</a>
+<a onclick="showPage('contact')">Contact</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© <span id="year"></span> Badireddy Group Pvt. Ltd. All Rights Reserved.
+</div>
+
+</div>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function showPage(pageId) {
+
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    const selectedPage = document.getElementById(pageId);
+
+    if (selectedPage) {
+        selectedPage.classList.add("active");
+    }
+
+    document.getElementById("navigation").classList.remove("open");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+function toggleMenu() {
+
+    document.getElementById("navigation").classList.toggle("open");
+
+}
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    document.getElementById("formMessage").textContent =
+    "Thank you for contacting BGPL! Please connect a form service to receive your enquiry.";
+
+    event.target.reset();
+
+}
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
